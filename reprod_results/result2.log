@@ -1,0 +1,309 @@
+2024-06-25 15:32:15,407 [trainer.py] => Time Str >>> 0625-15-32-15-406
+2024-06-25 15:32:15,429 [trainer.py] => memory_per_class: 20
+2024-06-25 15:32:15,429 [trainer.py] => fixed_memory: False
+2024-06-25 15:32:15,430 [trainer.py] => shuffle: True
+2024-06-25 15:32:15,430 [trainer.py] => model_name: memo
+2024-06-25 15:32:15,430 [trainer.py] => seed: 1993
+2024-06-25 15:32:15,430 [trainer.py] => dataset: cifar100
+2024-06-25 15:32:15,430 [trainer.py] => memory_size: 2495
+2024-06-25 15:32:15,430 [trainer.py] => init_cls: 10
+2024-06-25 15:32:15,431 [trainer.py] => increment: 10
+2024-06-25 15:32:15,431 [trainer.py] => convnet_type: memo_resnet32
+2024-06-25 15:32:15,431 [trainer.py] => prefix: fair
+2024-06-25 15:32:15,431 [trainer.py] => device: [device(type='cuda', index=0)]
+2024-06-25 15:32:15,431 [trainer.py] => debug: False
+2024-06-25 15:32:15,431 [trainer.py] => skip: False
+2024-06-25 15:32:15,432 [trainer.py] => train_base: True
+2024-06-25 15:32:15,432 [trainer.py] => train_adaptive: False
+2024-06-25 15:32:15,432 [trainer.py] => scheduler: steplr
+2024-06-25 15:32:15,432 [trainer.py] => init_epoch: 71
+2024-06-25 15:32:15,432 [trainer.py] => t_max: None
+2024-06-25 15:32:15,432 [trainer.py] => init_lr: 0.1
+2024-06-25 15:32:15,432 [trainer.py] => init_milestones: [60, 120, 170]
+2024-06-25 15:32:15,433 [trainer.py] => init_lr_decay: 0.1
+2024-06-25 15:32:15,433 [trainer.py] => init_weight_decay: 0.0005
+2024-06-25 15:32:15,433 [trainer.py] => epochs: 51
+2024-06-25 15:32:15,433 [trainer.py] => lrate: 0.1
+2024-06-25 15:32:15,433 [trainer.py] => milestones: [80, 120, 150]
+2024-06-25 15:32:15,433 [trainer.py] => lrate_decay: 0.1
+2024-06-25 15:32:15,433 [trainer.py] => batch_size: 128
+2024-06-25 15:32:15,434 [trainer.py] => weight_decay: 0.0002
+2024-06-25 15:32:15,434 [trainer.py] => alpha_aux: 1.0
+2024-06-25 15:32:15,434 [trainer.py] => config: C:/Users/86180/Desktop/ICLR23-MEMO-main/exps/memo.json
+2024-06-25 15:32:15,434 [trainer.py] => time_str: 0625-15-32-15-406
+2024-06-25 15:32:15,434 [trainer.py] => exp_name: 0625-15-32-15-406_cifar100_memo_resnet32_1993_B0_Inc10
+2024-06-25 15:32:15,434 [trainer.py] => logfilename: logs/fair/cifar100/memo/0625-15-32-15-406_cifar100_memo_resnet32_1993_B0_Inc10
+2024-06-25 15:32:15,435 [trainer.py] => csv_name: cifar100_1993_memo_resnet32_B0_Inc10
+2024-06-25 15:32:16,584 [data_manager.py] => [68, 56, 78, 8, 23, 84, 90, 65, 74, 76, 40, 89, 3, 92, 55, 9, 26, 80, 43, 38, 58, 70, 77, 1, 85, 19, 17, 50, 28, 53, 13, 81, 45, 82, 6, 59, 83, 16, 15, 44, 91, 41, 72, 60, 79, 52, 20, 10, 31, 54, 37, 95, 14, 71, 96, 98, 97, 2, 64, 66, 42, 22, 35, 86, 24, 34, 87, 21, 99, 0, 88, 27, 18, 94, 11, 12, 47, 25, 30, 46, 62, 69, 36, 61, 7, 63, 75, 5, 32, 4, 51, 48, 73, 93, 39, 67, 29, 49, 57, 33]
+2024-06-25 15:32:16,681 [memo.py] => >>> train generalized blocks:True train_adaptive:False
+2024-06-25 15:32:16,682 [trainer.py] => Start time:1719300736.6821094
+2024-06-25 15:32:16,682 [trainer.py] => All params: 112016
+2024-06-25 15:32:16,682 [trainer.py] => Trainable params: 112016
+2024-06-25 15:32:16,690 [inc_net.py] => SpecializedResNet_cifar(
+  (final_stage): Sequential(
+    (0): ResNetBasicblock(
+      (conv_a): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): DownsampleA(
+        (avg): AvgPool2d(kernel_size=1, stride=2, padding=0)
+      )
+    )
+    (1): ResNetBasicblock(
+      (conv_a): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (2): ResNetBasicblock(
+      (conv_a): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (3): ResNetBasicblock(
+      (conv_a): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (4): ResNetBasicblock(
+      (conv_a): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (avgpool): AvgPool2d(kernel_size=8, stride=8, padding=0)
+)
+2024-06-25 15:32:16,693 [memo.py] => Learning on 0-10
+2024-06-25 15:32:16,693 [memo.py] => All params: 464869
+2024-06-25 15:32:16,693 [memo.py] => Trainable params: 464869
+2024-06-25 15:33:08,806 [memo.py] => Task 0, Epoch 1/71 => Loss 2.698, Train_accy 16.22, Test_accy 15.60
+2024-06-25 15:33:34,552 [memo.py] => Task 0, Epoch 2/71 => Loss 1.923, Train_accy 26.84
+2024-06-25 15:34:00,151 [memo.py] => Task 0, Epoch 3/71 => Loss 1.730, Train_accy 36.76
+2024-06-25 15:34:25,913 [memo.py] => Task 0, Epoch 4/71 => Loss 1.685, Train_accy 39.42
+2024-06-25 15:34:51,704 [memo.py] => Task 0, Epoch 5/71 => Loss 1.586, Train_accy 43.04
+2024-06-25 15:35:42,539 [memo.py] => Task 0, Epoch 6/71 => Loss 1.478, Train_accy 47.02, Test_accy 42.50
+2024-06-25 15:36:08,330 [memo.py] => Task 0, Epoch 7/71 => Loss 1.364, Train_accy 51.76
+2024-06-25 15:36:34,100 [memo.py] => Task 0, Epoch 8/71 => Loss 1.283, Train_accy 54.54
+2024-06-25 15:36:59,963 [memo.py] => Task 0, Epoch 9/71 => Loss 1.239, Train_accy 56.04
+2024-06-25 15:37:27,545 [memo.py] => Task 0, Epoch 10/71 => Loss 1.203, Train_accy 58.18
+2024-06-25 15:38:20,484 [memo.py] => Task 0, Epoch 11/71 => Loss 1.195, Train_accy 58.96, Test_accy 58.60
+2024-06-25 15:38:46,898 [memo.py] => Task 0, Epoch 12/71 => Loss 1.099, Train_accy 61.52
+2024-06-25 15:39:13,489 [memo.py] => Task 0, Epoch 13/71 => Loss 1.013, Train_accy 64.54
+2024-06-25 15:39:39,595 [memo.py] => Task 0, Epoch 14/71 => Loss 1.016, Train_accy 65.06
+2024-06-25 15:40:05,387 [memo.py] => Task 0, Epoch 15/71 => Loss 0.974, Train_accy 67.26
+2024-06-25 15:40:56,215 [memo.py] => Task 0, Epoch 16/71 => Loss 0.952, Train_accy 67.12, Test_accy 66.00
+2024-06-25 15:41:21,872 [memo.py] => Task 0, Epoch 17/71 => Loss 0.871, Train_accy 69.56
+2024-06-25 15:41:47,754 [memo.py] => Task 0, Epoch 18/71 => Loss 0.783, Train_accy 72.80
+2024-06-25 15:42:14,157 [memo.py] => Task 0, Epoch 19/71 => Loss 0.748, Train_accy 74.12
+2024-06-25 15:42:40,363 [memo.py] => Task 0, Epoch 20/71 => Loss 0.771, Train_accy 74.00
+2024-06-25 15:43:31,753 [memo.py] => Task 0, Epoch 21/71 => Loss 0.731, Train_accy 74.88, Test_accy 73.00
+2024-06-25 15:43:57,763 [memo.py] => Task 0, Epoch 22/71 => Loss 0.687, Train_accy 76.94
+2024-06-25 15:44:23,818 [memo.py] => Task 0, Epoch 23/71 => Loss 0.667, Train_accy 77.06
+2024-06-25 15:44:49,840 [memo.py] => Task 0, Epoch 24/71 => Loss 0.650, Train_accy 78.22
+2024-06-25 15:45:16,008 [memo.py] => Task 0, Epoch 25/71 => Loss 0.711, Train_accy 75.70
+2024-06-25 15:46:07,108 [memo.py] => Task 0, Epoch 26/71 => Loss 0.592, Train_accy 80.26, Test_accy 64.90
+2024-06-25 15:46:32,950 [memo.py] => Task 0, Epoch 27/71 => Loss 0.558, Train_accy 80.68
+2024-06-25 15:46:58,889 [memo.py] => Task 0, Epoch 28/71 => Loss 0.524, Train_accy 81.86
+2024-06-25 15:47:24,960 [memo.py] => Task 0, Epoch 29/71 => Loss 0.471, Train_accy 83.16
+2024-06-25 15:47:50,952 [memo.py] => Task 0, Epoch 30/71 => Loss 0.435, Train_accy 85.26
+2024-06-25 15:48:42,074 [memo.py] => Task 0, Epoch 31/71 => Loss 0.443, Train_accy 84.56, Test_accy 80.20
+2024-06-25 15:49:07,876 [memo.py] => Task 0, Epoch 32/71 => Loss 0.517, Train_accy 83.60
+2024-06-25 15:49:33,914 [memo.py] => Task 0, Epoch 33/71 => Loss 0.575, Train_accy 80.12
+2024-06-25 15:49:59,877 [memo.py] => Task 0, Epoch 34/71 => Loss 0.465, Train_accy 85.18
+2024-06-25 15:50:25,998 [memo.py] => Task 0, Epoch 35/71 => Loss 0.543, Train_accy 81.96
+2024-06-25 15:51:16,967 [memo.py] => Task 0, Epoch 36/71 => Loss 0.431, Train_accy 85.34, Test_accy 78.20
+2024-06-25 15:51:42,784 [memo.py] => Task 0, Epoch 37/71 => Loss 0.421, Train_accy 85.94
+2024-06-25 15:52:08,560 [memo.py] => Task 0, Epoch 38/71 => Loss 0.512, Train_accy 82.58
+2024-06-25 15:52:34,343 [memo.py] => Task 0, Epoch 39/71 => Loss 0.462, Train_accy 84.02
+2024-06-25 15:53:00,116 [memo.py] => Task 0, Epoch 40/71 => Loss 0.363, Train_accy 87.40
+2024-06-25 15:53:50,900 [memo.py] => Task 0, Epoch 41/71 => Loss 0.338, Train_accy 88.68, Test_accy 78.30
+2024-06-25 15:54:16,767 [memo.py] => Task 0, Epoch 42/71 => Loss 0.457, Train_accy 85.06
+2024-06-25 15:54:42,559 [memo.py] => Task 0, Epoch 43/71 => Loss 0.356, Train_accy 88.08
+2024-06-25 15:55:08,307 [memo.py] => Task 0, Epoch 44/71 => Loss 0.378, Train_accy 86.78
+2024-06-25 15:55:34,067 [memo.py] => Task 0, Epoch 45/71 => Loss 0.343, Train_accy 88.76
+2024-06-25 15:56:24,925 [memo.py] => Task 0, Epoch 46/71 => Loss 0.342, Train_accy 88.46, Test_accy 80.30
+2024-06-25 15:56:50,689 [memo.py] => Task 0, Epoch 47/71 => Loss 0.332, Train_accy 89.04
+2024-06-25 15:57:16,460 [memo.py] => Task 0, Epoch 48/71 => Loss 0.436, Train_accy 86.26
+2024-06-25 15:57:42,261 [memo.py] => Task 0, Epoch 49/71 => Loss 0.471, Train_accy 84.34
+2024-06-25 15:58:08,016 [memo.py] => Task 0, Epoch 50/71 => Loss 0.351, Train_accy 87.90
+2024-06-25 15:58:58,832 [memo.py] => Task 0, Epoch 51/71 => Loss 0.373, Train_accy 87.52, Test_accy 80.90
+2024-06-25 15:59:24,631 [memo.py] => Task 0, Epoch 52/71 => Loss 0.356, Train_accy 88.38
+2024-06-25 15:59:50,428 [memo.py] => Task 0, Epoch 53/71 => Loss 0.293, Train_accy 90.20
+2024-06-25 16:00:16,254 [memo.py] => Task 0, Epoch 54/71 => Loss 0.240, Train_accy 91.70
+2024-06-25 16:00:41,972 [memo.py] => Task 0, Epoch 55/71 => Loss 0.411, Train_accy 85.44
+2024-06-25 16:01:32,614 [memo.py] => Task 0, Epoch 56/71 => Loss 0.300, Train_accy 90.04, Test_accy 75.70
+2024-06-25 16:01:58,355 [memo.py] => Task 0, Epoch 57/71 => Loss 0.430, Train_accy 86.00
+2024-06-25 16:02:24,143 [memo.py] => Task 0, Epoch 58/71 => Loss 0.299, Train_accy 89.94
+2024-06-25 16:02:49,994 [memo.py] => Task 0, Epoch 59/71 => Loss 0.230, Train_accy 92.50
+2024-06-25 16:03:15,775 [memo.py] => Task 0, Epoch 60/71 => Loss 0.234, Train_accy 91.88
+2024-06-25 16:04:06,532 [memo.py] => Task 0, Epoch 61/71 => Loss 0.172, Train_accy 94.52, Test_accy 89.70
+2024-06-25 16:04:32,505 [memo.py] => Task 0, Epoch 62/71 => Loss 0.127, Train_accy 95.84
+2024-06-25 16:04:58,287 [memo.py] => Task 0, Epoch 63/71 => Loss 0.116, Train_accy 96.64
+2024-06-25 16:05:24,175 [memo.py] => Task 0, Epoch 64/71 => Loss 0.110, Train_accy 96.82
+2024-06-25 16:05:50,106 [memo.py] => Task 0, Epoch 65/71 => Loss 0.097, Train_accy 96.90
+2024-06-25 16:06:41,072 [memo.py] => Task 0, Epoch 66/71 => Loss 0.095, Train_accy 97.52, Test_accy 89.40
+2024-06-25 16:07:06,861 [memo.py] => Task 0, Epoch 67/71 => Loss 0.102, Train_accy 97.12
+2024-06-25 16:07:32,627 [memo.py] => Task 0, Epoch 68/71 => Loss 0.087, Train_accy 97.40
+2024-06-25 16:07:58,455 [memo.py] => Task 0, Epoch 69/71 => Loss 0.089, Train_accy 97.92
+2024-06-25 16:08:24,256 [memo.py] => Task 0, Epoch 70/71 => Loss 0.090, Train_accy 97.72
+2024-06-25 16:09:15,238 [memo.py] => Task 0, Epoch 71/71 => Loss 0.088, Train_accy 97.50, Test_accy 89.40
+2024-06-25 16:09:15,239 [base.py] => Reducing exemplars...(249 per classes)
+2024-06-25 16:09:15,239 [base.py] => Constructing exemplars...(249 per classes)
+2024-06-25 16:14:18,516 [memo.py] => Train Generalized Blocks...
+2024-06-25 16:14:18,516 [memo.py] => Exemplar size: 2490
+2024-06-25 16:14:18,516 [trainer.py] => CNN: {'total': 89.4, '00-09': 89.4, 'old': 0, 'new': 89.4}
+2024-06-25 16:14:18,517 [trainer.py] => NME: {'total': 89.7, '00-09': 89.7, 'old': 0, 'new': 89.7}
+2024-06-25 16:14:18,517 [trainer.py] => CNN top1 curve: [89.4]
+2024-06-25 16:14:18,517 [trainer.py] => CNN top5 curve: [99.2]
+2024-06-25 16:14:18,517 [trainer.py] => NME top1 curve: [89.7]
+2024-06-25 16:14:18,517 [trainer.py] => NME top5 curve: [99.5]
+
+2024-06-25 16:14:18,518 [trainer.py] => All params: 464869
+2024-06-25 16:14:18,518 [trainer.py] => Trainable params: 464869
+2024-06-25 16:14:18,538 [memo.py] => Learning on 10-20
+2024-06-25 16:14:18,539 [memo.py] => All params: 818287
+2024-06-25 16:14:18,539 [memo.py] => Trainable params: 466799
+2024-06-25 16:41:32,642 [memo.py] => Task 1, Epoch 51/51 => Loss 0.571, Loss_clf 0.289, Loss_aux  0.283, Train_accy 90.36, Test_accy 66.70
+2024-06-25 16:41:32,739 [base.py] => Reducing exemplars...(124 per classes)
+2024-06-25 16:43:38,000 [base.py] => Constructing exemplars...(124 per classes)
+2024-06-25 16:48:40,792 [memo.py] => Exemplar size: 2480
+2024-06-25 16:48:40,792 [trainer.py] => CNN: {'total': 66.5, '00-09': 74.1, '10-19': 58.9, 'old': 74.1, 'new': 58.9}
+2024-06-25 16:48:40,792 [trainer.py] => NME: {'total': 71.7, '00-09': 77.2, '10-19': 66.2, 'old': 77.2, 'new': 66.2}
+2024-06-25 16:48:40,792 [trainer.py] => CNN top1 curve: [89.4, 66.5]
+2024-06-25 16:48:40,793 [trainer.py] => CNN top5 curve: [99.2, 92.3]
+2024-06-25 16:48:40,793 [trainer.py] => NME top1 curve: [89.7, 71.7]
+2024-06-25 16:48:40,793 [trainer.py] => NME top5 curve: [99.5, 94.05]
+
+2024-06-25 16:48:40,793 [trainer.py] => All params: 818287
+2024-06-25 16:48:40,794 [trainer.py] => Trainable params: 466799
+2024-06-25 16:48:40,807 [memo.py] => Learning on 20-30
+2024-06-25 16:48:40,807 [memo.py] => All params: 1172985
+2024-06-25 16:48:40,808 [memo.py] => Trainable params: 470009
+2024-06-25 17:16:09,500 [memo.py] => Task 2, Epoch 51/51 => Loss 0.374, Loss_clf 0.206, Loss_aux  0.169, Train_accy 93.21, Test_accy 71.23
+2024-06-25 17:16:09,502 [base.py] => Reducing exemplars...(83 per classes)
+2024-06-25 17:20:19,553 [base.py] => Constructing exemplars...(83 per classes)
+2024-06-25 17:25:22,779 [memo.py] => Exemplar size: 2490
+2024-06-25 17:25:22,779 [trainer.py] => CNN: {'total': 71.33, '00-09': 74.3, '10-19': 64.8, '20-29': 74.9, 'old': 69.55, 'new': 74.9}
+2024-06-25 17:25:22,779 [trainer.py] => NME: {'total': 71.3, '00-09': 75.2, '10-19': 63.1, '20-29': 75.6, 'old': 69.15, 'new': 75.6}
+2024-06-25 17:25:22,780 [trainer.py] => CNN top1 curve: [89.4, 66.5, 71.33]
+2024-06-25 17:25:22,780 [trainer.py] => CNN top5 curve: [99.2, 92.3, 92.3]
+2024-06-25 17:25:22,780 [trainer.py] => NME top1 curve: [89.7, 71.7, 71.3]
+2024-06-25 17:25:22,780 [trainer.py] => NME top5 curve: [99.5, 94.05, 93.17]
+
+2024-06-25 17:25:22,781 [trainer.py] => All params: 1172985
+2024-06-25 17:25:22,781 [trainer.py] => Trainable params: 470009
+2024-06-25 17:25:22,794 [memo.py] => Learning on 30-40
+2024-06-25 17:25:22,794 [memo.py] => All params: 1528963
+2024-06-25 17:25:22,795 [memo.py] => Trainable params: 474499
+2024-06-25 17:53:05,464 [memo.py] => Task 3, Epoch 51/51 => Loss 0.379, Loss_clf 0.195, Loss_aux  0.184, Train_accy 93.62, Test_accy 64.03
+2024-06-25 17:53:05,467 [base.py] => Reducing exemplars...(62 per classes)
+2024-06-25 17:59:20,315 [base.py] => Constructing exemplars...(62 per classes)
+2024-06-25 18:04:23,483 [memo.py] => Exemplar size: 2480
+2024-06-25 18:04:23,484 [trainer.py] => CNN: {'total': 65.4, '00-09': 66.5, '10-19': 59.0, '20-29': 66.3, '30-39': 69.8, 'old': 63.93, 'new': 69.8}
+2024-06-25 18:04:23,484 [trainer.py] => NME: {'total': 66.97, '00-09': 69.4, '10-19': 60.4, '20-29': 69.3, '30-39': 68.8, 'old': 66.37, 'new': 68.8}
+2024-06-25 18:04:23,484 [trainer.py] => CNN top1 curve: [89.4, 66.5, 71.33, 65.4]
+2024-06-25 18:04:23,484 [trainer.py] => CNN top5 curve: [99.2, 92.3, 92.3, 90.78]
+2024-06-25 18:04:23,484 [trainer.py] => NME top1 curve: [89.7, 71.7, 71.3, 66.97]
+2024-06-25 18:04:23,485 [trainer.py] => NME top5 curve: [99.5, 94.05, 93.17, 91.5]
+
+2024-06-25 18:04:23,485 [trainer.py] => All params: 1528963
+2024-06-25 18:04:23,486 [trainer.py] => Trainable params: 474499
+2024-06-25 18:04:23,497 [memo.py] => Learning on 40-50
+2024-06-25 18:04:23,498 [memo.py] => All params: 1886221
+2024-06-25 18:04:23,498 [memo.py] => Trainable params: 480269
+2024-06-25 18:32:15,321 [memo.py] => Task 4, Epoch 51/51 => Loss 0.311, Loss_clf 0.163, Loss_aux  0.148, Train_accy 94.92, Test_accy 54.74
+2024-06-25 18:32:15,324 [base.py] => Reducing exemplars...(49 per classes)
+2024-06-25 18:40:35,394 [base.py] => Constructing exemplars...(49 per classes)
+2024-06-25 18:45:39,603 [memo.py] => Exemplar size: 2450
+2024-06-25 18:45:39,603 [trainer.py] => CNN: {'total': 58.94, '00-09': 57.1, '10-19': 45.1, '20-29': 62.4, '30-39': 48.1, '40-49': 82.0, 'old': 53.18, 'new': 82.0}
+2024-06-25 18:45:39,603 [trainer.py] => NME: {'total': 62.78, '00-09': 65.4, '10-19': 53.3, '20-29': 65.7, '30-39': 56.5, '40-49': 73.0, 'old': 60.22, 'new': 73.0}
+2024-06-25 18:45:39,604 [trainer.py] => CNN top1 curve: [89.4, 66.5, 71.33, 65.4, 58.94]
+2024-06-25 18:45:39,604 [trainer.py] => CNN top5 curve: [99.2, 92.3, 92.3, 90.78, 85.92]
+2024-06-25 18:45:39,604 [trainer.py] => NME top1 curve: [89.7, 71.7, 71.3, 66.97, 62.78]
+2024-06-25 18:45:39,604 [trainer.py] => NME top5 curve: [99.5, 94.05, 93.17, 91.5, 88.88]
+
+2024-06-25 18:45:39,605 [trainer.py] => All params: 1886221
+2024-06-25 18:45:39,605 [trainer.py] => Trainable params: 480269
+2024-06-25 18:45:39,622 [memo.py] => Learning on 50-60
+2024-06-25 18:45:39,624 [memo.py] => All params: 2244759
+2024-06-25 18:45:39,625 [memo.py] => Trainable params: 487319
+2024-06-25 19:13:46,748 [memo.py] => Task 5, Epoch 51/51 => Loss 0.443, Loss_clf 0.229, Loss_aux  0.213, Train_accy 92.60, Test_accy 55.13
+2024-06-25 19:13:46,750 [base.py] => Reducing exemplars...(41 per classes)
+2024-06-25 19:24:12,785 [base.py] => Constructing exemplars...(41 per classes)
+2024-06-25 19:29:16,949 [memo.py] => Exemplar size: 2460
+2024-06-25 19:29:16,949 [trainer.py] => CNN: {'total': 58.62, '00-09': 60.6, '10-19': 45.6, '20-29': 60.6, '30-39': 49.8, '40-49': 64.5, '50-59': 70.6, 'old': 56.22, 'new': 70.6}
+2024-06-25 19:29:16,949 [trainer.py] => NME: {'total': 60.85, '00-09': 62.8, '10-19': 49.2, '20-29': 61.8, '30-39': 57.2, '40-49': 67.3, '50-59': 66.8, 'old': 59.66, 'new': 66.8}
+2024-06-25 19:29:16,950 [trainer.py] => CNN top1 curve: [89.4, 66.5, 71.33, 65.4, 58.94, 58.62]
+2024-06-25 19:29:16,950 [trainer.py] => CNN top5 curve: [99.2, 92.3, 92.3, 90.78, 85.92, 85.3]
+2024-06-25 19:29:16,950 [trainer.py] => NME top1 curve: [89.7, 71.7, 71.3, 66.97, 62.78, 60.85]
+2024-06-25 19:29:16,950 [trainer.py] => NME top5 curve: [99.5, 94.05, 93.17, 91.5, 88.88, 87.32]
+
+2024-06-25 19:29:16,951 [trainer.py] => All params: 2244759
+2024-06-25 19:29:16,951 [trainer.py] => Trainable params: 487319
+2024-06-25 19:29:16,962 [memo.py] => Learning on 60-70
+2024-06-25 19:29:16,963 [memo.py] => All params: 2604577
+2024-06-25 19:29:16,964 [memo.py] => Trainable params: 495649
+2024-06-25 19:57:43,829 [memo.py] => Task 6, Epoch 51/51 => Loss 0.248, Loss_clf 0.127, Loss_aux  0.121, Train_accy 96.14, Test_accy 54.96
+2024-06-25 19:57:43,832 [base.py] => Reducing exemplars...(35 per classes)
+2024-06-25 20:10:19,982 [base.py] => Constructing exemplars...(35 per classes)
+2024-06-25 20:15:25,974 [memo.py] => Exemplar size: 2450
+2024-06-25 20:15:25,974 [trainer.py] => CNN: {'total': 57.6, '00-09': 58.1, '10-19': 43.0, '20-29': 56.3, '30-39': 54.3, '40-49': 68.1, '50-59': 53.6, '60-69': 69.8, 'old': 55.57, 'new': 69.8}
+2024-06-25 20:15:25,975 [trainer.py] => NME: {'total': 58.51, '00-09': 59.4, '10-19': 46.1, '20-29': 61.0, '30-39': 55.9, '40-49': 64.1, '50-59': 54.7, '60-69': 68.4, 'old': 56.87, 'new': 68.4}
+2024-06-25 20:15:25,975 [trainer.py] => CNN top1 curve: [89.4, 66.5, 71.33, 65.4, 58.94, 58.62, 57.6]
+2024-06-25 20:15:25,975 [trainer.py] => CNN top5 curve: [99.2, 92.3, 92.3, 90.78, 85.92, 85.3, 84.27]
+2024-06-25 20:15:25,975 [trainer.py] => NME top1 curve: [89.7, 71.7, 71.3, 66.97, 62.78, 60.85, 58.51]
+2024-06-25 20:15:25,975 [trainer.py] => NME top5 curve: [99.5, 94.05, 93.17, 91.5, 88.88, 87.32, 85.89]
+
+2024-06-25 20:15:25,976 [trainer.py] => All params: 2604577
+2024-06-25 20:15:25,977 [trainer.py] => Trainable params: 495649
+2024-06-25 20:15:25,988 [memo.py] => Learning on 70-80
+2024-06-25 20:15:25,989 [memo.py] => All params: 2965675
+2024-06-25 20:15:25,989 [memo.py] => Trainable params: 505259
+2024-06-25 20:43:53,364 [memo.py] => Task 7, Epoch 51/51 => Loss 0.425, Loss_clf 0.206, Loss_aux  0.220, Train_accy 93.46, Test_accy 50.76
+2024-06-25 20:43:53,366 [base.py] => Reducing exemplars...(31 per classes)
+2024-06-25 20:58:22,753 [base.py] => Constructing exemplars...(31 per classes)
+2024-06-25 21:03:28,107 [memo.py] => Exemplar size: 2480
+2024-06-25 21:03:28,108 [trainer.py] => CNN: {'total': 55.36, '00-09': 51.9, '10-19': 43.0, '20-29': 59.7, '30-39': 45.5, '40-49': 56.7, '50-59': 60.2, '60-69': 66.6, '70-79': 59.3, 'old': 54.8, 'new': 59.3}
+2024-06-25 21:03:28,108 [trainer.py] => NME: {'total': 56.42, '00-09': 56.7, '10-19': 45.8, '20-29': 60.2, '30-39': 50.2, '40-49': 61.8, '50-59': 50.5, '60-69': 63.9, '70-79': 62.3, 'old': 55.59, 'new': 62.3}
+2024-06-25 21:03:28,108 [trainer.py] => CNN top1 curve: [89.4, 66.5, 71.33, 65.4, 58.94, 58.62, 57.6, 55.36]
+2024-06-25 21:03:28,108 [trainer.py] => CNN top5 curve: [99.2, 92.3, 92.3, 90.78, 85.92, 85.3, 84.27, 83.45]
+2024-06-25 21:03:28,109 [trainer.py] => NME top1 curve: [89.7, 71.7, 71.3, 66.97, 62.78, 60.85, 58.51, 56.42]
+2024-06-25 21:03:28,109 [trainer.py] => NME top5 curve: [99.5, 94.05, 93.17, 91.5, 88.88, 87.32, 85.89, 84.84]
+
+2024-06-25 21:03:28,110 [trainer.py] => All params: 2965675
+2024-06-25 21:03:28,110 [trainer.py] => Trainable params: 505259
+2024-06-25 21:03:28,130 [memo.py] => Learning on 80-90
+2024-06-25 21:03:28,131 [memo.py] => All params: 3328053
+2024-06-25 21:03:28,132 [memo.py] => Trainable params: 516149
+2024-06-25 21:31:58,206 [memo.py] => Task 8, Epoch 51/51 => Loss 0.345, Loss_clf 0.178, Loss_aux  0.167, Train_accy 94.81, Test_accy 47.60
+2024-06-25 21:31:58,209 [base.py] => Reducing exemplars...(27 per classes)
+2024-06-25 21:48:36,352 [base.py] => Constructing exemplars...(27 per classes)
+2024-06-25 21:53:42,507 [memo.py] => Exemplar size: 2430
+2024-06-25 21:53:42,508 [trainer.py] => CNN: {'total': 53.34, '00-09': 53.2, '10-19': 42.0, '20-29': 51.1, '30-39': 47.7, '40-49': 56.0, '50-59': 47.2, '60-69': 61.3, '70-79': 55.2, '80-89': 66.4, 'old': 51.71, 'new': 66.4}
+2024-06-25 21:53:42,508 [trainer.py] => NME: {'total': 54.32, '00-09': 53.9, '10-19': 42.8, '20-29': 57.2, '30-39': 49.7, '40-49': 58.9, '50-59': 45.6, '60-69': 60.7, '70-79': 58.1, '80-89': 62.0, 'old': 53.36, 'new': 62.0}
+2024-06-25 21:53:42,508 [trainer.py] => CNN top1 curve: [89.4, 66.5, 71.33, 65.4, 58.94, 58.62, 57.6, 55.36, 53.34]
+2024-06-25 21:53:42,508 [trainer.py] => CNN top5 curve: [99.2, 92.3, 92.3, 90.78, 85.92, 85.3, 84.27, 83.45, 81.19]
+2024-06-25 21:53:42,508 [trainer.py] => NME top1 curve: [89.7, 71.7, 71.3, 66.97, 62.78, 60.85, 58.51, 56.42, 54.32]
+2024-06-25 21:53:42,508 [trainer.py] => NME top5 curve: [99.5, 94.05, 93.17, 91.5, 88.88, 87.32, 85.89, 84.84, 83.52]
+
+2024-06-25 21:53:42,509 [trainer.py] => All params: 3328053
+2024-06-25 21:53:42,510 [trainer.py] => Trainable params: 516149
+2024-06-25 21:53:42,523 [memo.py] => Learning on 90-100
+2024-06-25 21:53:42,524 [memo.py] => All params: 3691711
+2024-06-25 21:53:42,525 [memo.py] => Trainable params: 528319
+2024-06-25 22:22:20,423 [memo.py] => Task 9, Epoch 51/51 => Loss 0.909, Loss_clf 0.481, Loss_aux  0.428, Train_accy 86.73, Test_accy 48.59
+2024-06-25 22:22:20,426 [base.py] => Reducing exemplars...(24 per classes)
+2024-06-25 22:44:06,148 [base.py] => Constructing exemplars...(24 per classes)
+2024-06-25 22:50:19,011 [memo.py] => Exemplar size: 2400
+2024-06-25 22:50:19,012 [trainer.py] => CNN: {'total': 52.76, '00-09': 52.0, '10-19': 41.3, '20-29': 55.6, '30-39': 45.2, '40-49': 58.7, '50-59': 46.6, '60-69': 59.9, '70-79': 50.9, '80-89': 63.1, '90-99': 54.3, 'old': 52.59, 'new': 54.3}
+2024-06-25 22:50:19,012 [trainer.py] => NME: {'total': 52.27, '00-09': 50.6, '10-19': 42.4, '20-29': 56.4, '30-39': 46.2, '40-49': 57.2, '50-59': 47.2, '60-69': 60.3, '70-79': 52.3, '80-89': 56.2, '90-99': 53.9, 'old': 52.09, 'new': 53.9}
+2024-06-25 22:50:19,012 [trainer.py] => CNN top1 curve: [89.4, 66.5, 71.33, 65.4, 58.94, 58.62, 57.6, 55.36, 53.34, 52.76]
+2024-06-25 22:50:19,012 [trainer.py] => CNN top5 curve: [99.2, 92.3, 92.3, 90.78, 85.92, 85.3, 84.27, 83.45, 81.19, 80.35]
+2024-06-25 22:50:19,013 [trainer.py] => NME top1 curve: [89.7, 71.7, 71.3, 66.97, 62.78, 60.85, 58.51, 56.42, 54.32, 52.27]
+2024-06-25 22:50:19,013 [trainer.py] => NME top5 curve: [99.5, 94.05, 93.17, 91.5, 88.88, 87.32, 85.89, 84.84, 83.52, 81.2]
+
+2024-06-25 22:50:19,013 [trainer.py] => End Time:1719327019.013371
